@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffd4d6;
+  background: #ffff38;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2565,7 +2565,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 body {
-  background: url("https://c-ssl.dtstatic.com/uploads/blog/202302/13/20230213191856_58c57.thumb.400_0.jpeg");
+  background: url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
