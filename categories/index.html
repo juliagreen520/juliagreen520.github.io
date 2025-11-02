@@ -388,28 +388,34 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // 直接使用 APlayer，使用完整的歌曲信息
-    const ap = new APlayer({
-        container: document.getElementById('aplayer'),
-        fixed: true,
-        mini: true,
-        autoplay: false,
-        theme: '#C20C0C',
-        audio: [{
-            name: '熟能生巧',
-            artist: '林俊杰',
-            url: 'https://music.163.com/song/media/outer/url?id=108650.mp3',
-            cover: 'https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg'
-        }]
-    });
+    console.log('DOM 已加载，开始初始化 APlayer...');
     
-    console.log('APlayer 初始化成功 - 熟能生巧');
+    try {
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            mini: true,
+            autoplay: false,
+            theme: '#C20C0C',
+            audio: [{
+                name: '新的测试歌曲',
+                artist: '测试歌手',
+                url: 'https://music.163.com/song/media/outer/url?id=2745997556.mp3',
+                cover: 'https://p1.music.126.net/default.jpg'
+            }]
+        });
+        
+        console.log('APlayer 初始化成功！', ap);
+        
+    } catch (error) {
+        console.error('APlayer 初始化失败:', error);
+    }
 });
 </script>
 
 <!-- 调试信息 -->
-<div style="position: fixed; top: 10px; right: 10px; background: blue; color: white; padding: 10px; z-index: 9999; font-size: 12px;">
-    《熟能生巧》- 林俊杰 | 播放器已加载
+<div style="position: fixed; top: 10px; right: 10px; background: purple; color: white; padding: 10px; z-index: 9999; font-size: 12px;">
+    新歌曲测试 - 查看控制台
 </div>
 </body>
 </html>
