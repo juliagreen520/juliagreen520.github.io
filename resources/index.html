@@ -371,16 +371,22 @@
   
 
   
-<!-- APlayer 音乐播放器 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- 使用本地 APlayer 资源 -->
+<link rel="stylesheet" href="/css/APlayer.min.css">
+<script src="/js/APlayer.min.js"></script>
 
 <!-- 播放器容器 -->
 <div id="aplayer"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM 已加载，开始初始化 APlayer...');
+    console.log('DOM 已加载，APlayer 状态:', typeof APlayer);
+    
+    if (typeof APlayer === 'undefined') {
+        console.error('APlayer 未加载，尝试从本地加载...');
+        // 如果本地资源也不工作，使用备用方案
+        return;
+    }
     
     try {
         const ap = new APlayer({
@@ -390,15 +396,13 @@ document.addEventListener('DOMContentLoaded', function() {
             autoplay: false,
             theme: '#C20C0C',
             audio: [{
-                name: '新的测试歌曲',
-                artist: '测试歌手',
+                name: '熟能生巧',
+                artist: '林俊杰',
                 url: 'https://music.163.com/song/media/outer/url?id=2745997556.mp3',
-                cover: 'https://p1.music.126.net/default.jpg'
+                cover: 'https://p1.music.126.net/vi-m7cO2L6tQoF0L2J7J0g==/109951168529983380.jpg'
             }]
         });
-        
-        console.log('APlayer 初始化成功！', ap);
-        
+        console.log('APlayer 初始化成功！');
     } catch (error) {
         console.error('APlayer 初始化失败:', error);
     }
@@ -406,8 +410,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!-- 调试信息 -->
-<div style="position: fixed; top: 10px; right: 10px; background: purple; color: white; padding: 10px; z-index: 9999; font-size: 12px;">
-    新歌曲测试 - 查看控制台
+<div style="position: fixed; top: 10px; right: 10px; background: red; color: white; padding: 10px; z-index: 9999;">
+    本地资源测试 - 查看控制台
 </div>
 </body>
 </html>
