@@ -398,11 +398,7 @@
   
 
   
-<!-- 测试内容 -->
-<div style="position: fixed; top: 10px; right: 10px; background: green; color: white; padding: 10px; z-index: 9999;">
-    🎵 body-end.swig 已加载！
-</div>
-
+<!-- APlayer 音乐播放器 -->
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 <meting-js
   server="netease"
@@ -411,7 +407,10 @@
   fixed="true"
   mini="true"
   autoplay="false"
-  theme="#C20C0C">
+  theme="#C20C0C"
+  loop="all"
+  volume="0.7"
+  mutex="true">
 </meting-js>
 </body>
 </html>
