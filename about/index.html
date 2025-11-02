@@ -374,23 +374,34 @@
 <!-- APlayer 音乐播放器 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-<meting-js
-  server="netease"
-  type="song"
-  id="108650"
-  fixed="true"
-  mini="true"
-  autoplay="false"
-  theme="#C20C0C"
-  loop="all"
-  volume="0.7">
-</meting-js>
+<!-- 播放器容器 -->
+<div id="aplayer"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 直接使用 APlayer，使用完整的歌曲信息
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        mini: true,
+        autoplay: false,
+        theme: '#C20C0C',
+        audio: [{
+            name: '熟能生巧',
+            artist: '林俊杰',
+            url: 'https://music.163.com/song/media/outer/url?id=108650.mp3',
+            cover: 'https://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg'
+        }]
+    });
+    
+    console.log('APlayer 初始化成功 - 熟能生巧');
+});
+</script>
 
 <!-- 调试信息 -->
-<div style="position: fixed; top: 10px; right: 10px; background: green; color: white; padding: 10px; z-index: 9999; font-size: 12px;">
-    播放器代码已加载
+<div style="position: fixed; top: 10px; right: 10px; background: blue; color: white; padding: 10px; z-index: 9999; font-size: 12px;">
+    《熟能生巧》- 林俊杰 | 播放器已加载
 </div>
 </body>
 </html>
