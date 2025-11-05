@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到Moli的博客</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+<pre><code>    body {
+        font-family: &#39;Noto Sans SC&#39;, sans-serif;
+        background: 
+            linear-gradient(135deg, rgba(255, 245, 248, 0.6), rgba(255, 235, 240, 0.5)),
+            url(&#39;https://c-ssl.duitang.com/uploads/item/201901/18/20190118162053_vSuyv.jpeg&#39;) center/cover no-repeat;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        color: #7a5c6d;
+    }
+    
+    .container {
+        text-align: center;
+        z-index: 10;
+        position: relative;
+        padding: 3rem 2rem;
+        max-width: 90%;
+        width: 600px;
+        animation: fadeIn 1.5s ease-out;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(180, 120, 150, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+    
+    .logo {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 2rem;
+        background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 25px rgba(200, 150, 170, 0.15);
+        animation: float 6s ease-in-out infinite;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+    }
+    
+    .logo::before {
+        content: &#39;&#39;;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(45deg, #f8d7da, #f5c6cb, #f8d7da);
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate 20s linear infinite;
+        opacity: 0.4;
+    }
+    
+    .logo-inner {
+        width: 120px;
+        height: 120px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 0 15px rgba(240, 200, 210, 0.3);
+        font-size: 2.8rem;
+        color: #d4a5b5;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        color: #a87c94;
+        letter-spacing: 1px;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        color: #8a6b7d;
+        line-height: 1.6;
+    }
+    
+    .enter-section {
+        position: relative;
+        margin-top: 1rem;
+    }
+    
+    .key-reminder {
+        font-size: 0.95rem;
+        color: #8a6b7d;
+        margin-bottom: 1rem;
+        animation: pulse 3s infinite;
+    }
+    
+    .enter-btn {
+        display: inline-block;
+        padding: 14px 40px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #a87c94;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 400;
+        box-shadow: 0 5px 15px rgba(180, 140, 160, 0.2);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(220, 180, 200, 0.4);
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .enter-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(180, 140, 160, 0.25);
+        background: rgba(255, 255, 255, 1);
+        color: #9a6c84;
+        border-color: rgba(220, 180, 200, 0.6);
+    }
+    
+    .enter-btn:active {
+        transform: translateY(-1px);
+    }
+    
+    .enter-btn::after {
+        content: &#39;&#39;;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+        transition: left 0.7s;
+    }
+    
+    .enter-btn:hover::after {
+        left: 100%;
+    }
+    
+    .arrow {
+        display: inline-block;
+        margin-left: 8px;
+        animation: bounce 2s infinite;
+    }
+    
+    /* 简约装饰元素 */
+    .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 240, 245, 0.3);
+        z-index: 1;
+    }
+    
+    .circle:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 8%;
+        animation: float 20s infinite ease-in-out;
+    }
+    
+    .circle:nth-child(2) {
+        width: 70px;
+        height: 70px;
+        top: 25%;
+        right: 10%;
+        animation: float 15s infinite ease-in-out reverse;
+    }
+    
+    .circle:nth-child(3) {
+        width: 80px;
+        height: 80px;
+        bottom: 15%;
+        left: 12%;
+        animation: float 18s infinite ease-in-out;
+    }
+    
+    .dot {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(220, 190, 200, 0.25);
+        z-index: 1;
+    }
+    
+    .dot:nth-child(4) {
+        width: 12px;
+        height: 12px;
+        top: 20%;
+        right: 20%;
+        animation: float 12s infinite ease-in-out;
+    }
+    
+    .dot:nth-child(5) {
+        width: 8px;
+        height: 8px;
+        bottom: 25%;
+        right: 15%;
+        animation: float 10s infinite ease-in-out reverse;
+    }
+    
+    /* 动画 */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        33% { transform: translate(10px, -8px) rotate(2deg); }
+        66% { transform: translate(-5px, 8px) rotate(-1deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
+    }
+    
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+        0% { opacity: 0.7; }
+        50% { opacity: 1; }
+        100% { opacity: 0.7; }
+    }
+    
+    @keyframes bounce {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(4px); }
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+        }
+        
+        .container {
+            padding: 2rem 1.5rem;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .logo-inner {
+            width: 100px;
+            height: 100px;
+            font-size: 2.2rem;
+        }
+        
+        .enter-btn {
+            padding: 12px 35px;
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        .subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        
+        .enter-btn {
+            padding: 10px 30px;
+            font-size: 0.95rem;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .logo-inner {
+            width: 80px;
+            height: 80px;
+            font-size: 1.8rem;
+        }
+    }
+&lt;/style&gt;
+</code></pre>
+</head>
+<body>
+    <!-- 简约装饰元素 -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    
+<pre><code>&lt;!-- 主要内容 --&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+        &lt;div class=&quot;logo-inner&quot;&gt;M&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h1&gt;欢迎来到Moli的博客&lt;/h1&gt;
+    &lt;p class=&quot;subtitle&quot;&gt;记录生活点滴 · 分享技术心得 · 探索美好世界&lt;/p&gt;
+    
+    &lt;div class=&quot;enter-section&quot;&gt;
+        &lt;div class=&quot;key-reminder&quot;&gt;点击下方按钮进入博客&lt;/div&gt;
+        &lt;a href=&quot;/&quot; class=&quot;enter-btn&quot;&gt;进入博客 &lt;span class=&quot;arrow&quot;&gt;→&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // 添加更多简约装饰元素
+    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+        const body = document.querySelector(&#39;body&#39;);
+        
+        // 添加更多圆形
+        for (let i = 0; i &lt; 3; i++) {
+            const circle = document.createElement(&#39;div&#39;);
+            circle.className = &#39;circle&#39;;
+            circle.style.width = Math.random() * 60 + 40 + &#39;px&#39;;
+            circle.style.height = circle.style.width;
+            circle.style.left = Math.random() * 100 + &#39;%&#39;;
+            circle.style.top = Math.random() * 100 + &#39;%&#39;;
+            circle.style.animationDuration = Math.random() * 15 + 10 + &#39;s&#39;;
+            circle.style.animationDelay = Math.random() * 5 + &#39;s&#39;;
+            body.appendChild(circle);
+        }
+        
+        // 添加更多小点
+        for (let i = 0; i &lt; 4; i++) {
+            const dot = document.createElement(&#39;div&#39;);
+            dot.className = &#39;dot&#39;;
+            dot.style.width = Math.random() * 8 + 4 + &#39;px&#39;;
+            dot.style.height = dot.style.width;
+            dot.style.left = Math.random() * 100 + &#39;%&#39;;
+            dot.style.top = Math.random() * 100 + &#39;%&#39;;
+            dot.style.animationDuration = Math.random() * 12 + 8 + &#39;s&#39;;
+            dot.style.animationDelay = Math.random() * 3 + &#39;s&#39;;
+            body.appendChild(dot);
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+</body>
+</html>
