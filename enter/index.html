@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="欢迎来到Moli的博客                   * {             margin: 0;             padding: 0;             box-sizing: border-box;         }                  body {             font-family: &#39;Noto S">
+  <meta name="description" content="欢迎来到Moli的博客                        &#x2F;* 基础重置 *&#x2F;         * {             margin: 0;             padding: 0;             box-sizing: border-box;         }          html, body {">
 <meta property="og:type" content="website">
 <meta property="og:title" content="茉莉MAGIC">
 <meta property="og:url" content="http://example.com/enter/index.html">
 <meta property="og:site_name" content="茉莉MAGIC">
-<meta property="og:description" content="欢迎来到Moli的博客                   * {             margin: 0;             padding: 0;             box-sizing: border-box;         }                  body {             font-family: &#39;Noto S">
+<meta property="og:description" content="欢迎来到Moli的博客                        &#x2F;* 基础重置 *&#x2F;         * {             margin: 0;             padding: 0;             box-sizing: border-box;         }          html, body {">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-11-05T13:25:29.095Z">
-<meta property="article:modified_time" content="2025-11-05T13:25:29.095Z">
+<meta property="article:published_time" content="2025-11-05T13:43:51.247Z">
+<meta property="article:modified_time" content="2025-11-05T13:43:51.247Z">
 <meta property="article:author" content="moli">
 <meta name="twitter:card" content="summary">
 
@@ -213,320 +213,380 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>欢迎来到Moli的博客</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* 基础重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            overflow: hidden;
+        }
+
         body {
-            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
             background: 
-                linear-gradient(135deg, rgba(255, 245, 248, 0.7), rgba(255, 235, 240, 0.6)),
+                linear-gradient(135deg, 
+                    rgba(255, 240, 245, 0.9) 0%, 
+                    rgba(255, 228, 225, 0.85) 50%, 
+                    rgba(255, 240, 245, 0.95) 100%),
                 url('https://c-ssl.duitang.com/uploads/item/201901/18/20190118162053_vSuyv.jpeg') center/cover no-repeat fixed;
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow-x: hidden;
             position: relative;
-            color: #5a3d4e;
         }
-        
-        /* 适配Next主题的容器 */
-        .enter-container {
+
+        /* 主容器 - 确保完美居中 */
+        .welcome-page {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-wrapper {
             text-align: center;
-            z-index: 10;
-            position: relative;
-            padding: 2.5rem 2rem;
-            max-width: 680px;
+            max-width: 480px;
             width: 90%;
-            margin: 0 auto;
-            animation: fadeIn 1.2s ease-out;
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(180, 120, 150, 0.12);
+            padding: 3rem 2.5rem;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 60px rgba(138, 75, 118, 0.15),
+                0 8px 32px rgba(138, 75, 118, 0.1);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 10;
         }
-        
-        .logo {
+
+        /* Logo设计 */
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+
+        .logo-circle {
             width: 100px;
             height: 100px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            margin: 0 auto;
+            background: linear-gradient(135deg, #ff6b93, #ff9a9e, #fad0c4);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(200, 150, 170, 0.15);
-            animation: float 6s ease-in-out infinite;
+            box-shadow: 
+                0 12px 30px rgba(255, 107, 147, 0.25),
+                inset 0 -2px 8px rgba(255, 107, 147, 0.1);
             position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.9);
         }
-        
-        .logo::before {
+
+        .logo-circle::after {
             content: '';
             position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            background: linear-gradient(45deg, #f8d7da, #f5c6cb, #f8d7da);
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(135deg, #ff6b93, #ff9a9e, #fad0c4);
             border-radius: 50%;
             z-index: -1;
-            animation: rotate 20s linear infinite;
             opacity: 0.3;
+            filter: blur(8px);
         }
-        
-        .logo-inner {
+
+        .logo-text {
             width: 84px;
             height: 84px;
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 0 12px rgba(240, 200, 210, 0.25);
             font-size: 2rem;
-            color: #d4a5b5;
-            font-weight: 500;
+            color: #ff6b93;
+            font-weight: 600;
+            box-shadow: inset 0 2px 8px rgba(255, 107, 147, 0.1);
         }
-        
-        h1 {
-            font-size: 2rem;
-            font-weight: 500;
+
+        /* 标题区域 */
+        .title-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #8a4b76, #ff6b93);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.8rem;
-            color: #8a4b76;
-            letter-spacing: 0.5px;
             line-height: 1.3;
         }
-        
-        .subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: #7a5c6d;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-        
-        .enter-section {
-            position: relative;
-            margin-top: 1.5rem;
-        }
-        
-        .key-reminder {
-            font-size: 0.9rem;
-            color: #8a6b7d;
-            margin-bottom: 1rem;
-            animation: pulse 3s infinite;
+
+        .title-divider {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b93, #ff9a9e);
+            margin: 0 auto;
+            border-radius: 2px;
             opacity: 0.8;
         }
-        
-        .enter-btn {
-            display: inline-block;
-            padding: 12px 36px;
-            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
-            color: #8a4b76;
+
+        /* 描述文字 */
+        .description {
+            font-size: 1.1rem;
+            color: #7a5c6d;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        /* 操作区域 */
+        .action-section {
+            margin-top: 2rem;
+        }
+
+        .action-hint {
+            font-size: 0.95rem;
+            color: #8a6b7d;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .action-hint i {
+            color: #ff6b93;
+        }
+
+        .enter-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 38px;
+            background: linear-gradient(135deg, #ff6b93, #ff9a9e);
+            color: white;
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 1rem;
+            border-radius: 28px;
+            font-size: 1.05rem;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(180, 140, 160, 0.25);
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 147, 0.35),
+                0 4px 12px rgba(255, 107, 147, 0.25);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.5px;
+            border: none;
             position: relative;
             overflow: hidden;
         }
-        
-        .enter-btn:hover {
+
+        .enter-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .enter-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(180, 140, 160, 0.35);
-            background: linear-gradient(135deg, #f5c6cb, #f8d7da);
-            color: #7a3d66;
+            box-shadow: 
+                0 12px 30px rgba(255, 107, 147, 0.45),
+                0 6px 18px rgba(255, 107, 147, 0.35);
         }
-        
-        .enter-btn:active {
-            transform: translateY(0);
+
+        .enter-button:hover::before {
+            left: 100%;
         }
-        
-        .arrow {
-            display: inline-block;
-            margin-left: 6px;
-            animation: bounce 2s infinite;
-            font-weight: 600;
+
+        .button-arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
         }
-        
-        /* 简约装饰元素 - 减少数量 */
-        .decoration {
+
+        .enter-button:hover .button-arrow {
+            transform: translateX(4px);
+        }
+
+        /* 背景装饰 */
+        .floating-bg {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 240, 245, 0.25);
-            z-index: 1;
+            background: radial-gradient(circle, rgba(255, 154, 158, 0.1) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
             pointer-events: none;
         }
-        
-        .decoration.dot {
-            background: rgba(220, 190, 200, 0.2);
-        }
-        
+
         /* 动画 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(6px, -5px) rotate(1deg); }
-            66% { transform: translate(-3px, 5px) rotate(-0.5deg); }
-            100% { transform: translate(0, 0) rotate(0deg); }
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(15px, -10px) scale(1.05);
+            }
+            50% {
+                transform: translate(-10px, 15px) scale(0.95);
+            }
+            75% {
+                transform: translate(8px, 8px) scale(1.02);
+            }
         }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 2.5rem 2rem;
+                max-width: 400px;
+            }
+
+            .main-title {
+                font-size: 1.9rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .logo-circle {
+                width: 90px;
+                height: 90px;
+            }
+
+            .logo-text {
+                width: 76px;
+                height: 76px;
+                font-size: 1.8rem;
+            }
+
+            .enter-button {
+                padding: 13px 34px;
+                font-size: 1rem;
+            }
         }
-        
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(3px); }
-        }
-        
-        /* 响应式设计 - 适配Next主题的断点 */
-        @media (max-width: 767px) {
-            .enter-container {
+
+        @media (max-width: 480px) {
+            .content-wrapper {
                 padding: 2rem 1.5rem;
                 width: 95%;
-                margin: 1rem auto;
             }
-            
-            h1 {
+
+            .main-title {
                 font-size: 1.7rem;
             }
-            
-            .subtitle {
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
+
+            .description {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
             }
-            
-            .logo {
+
+            .logo-circle {
                 width: 80px;
                 height: 80px;
-                margin-bottom: 1.2rem;
             }
-            
-            .logo-inner {
+
+            .logo-text {
                 width: 68px;
                 height: 68px;
                 font-size: 1.6rem;
             }
-            
-            .enter-btn {
-                padding: 10px 28px;
-                font-size: 0.95rem;
+
+            .enter-button {
+                padding: 12px 32px;
             }
         }
-        
-        @media (max-width: 480px) {
-            .enter-container {
-                padding: 1.5rem 1rem;
-            }
-            
-            h1 {
-                font-size: 1.5rem;
-            }
-            
-            .subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 1.2rem;
-            }
-            
-            .key-reminder {
-                font-size: 0.85rem;
-            }
-        }
-        
-        /* 适配Next主题的暗色模式 */
-        @media (prefers-color-scheme: dark) {
-            .enter-container {
-                background: rgba(40, 40, 40, 0.9);
-                color: #e8e8e8;
-                border-color: rgba(255, 255, 255, 0.1);
-            }
-            
-            h1 {
-                color: #f8d7da;
-            }
-            
-            .subtitle {
-                color: #d4a5b5;
-            }
-            
-            .key-reminder {
-                color: #c8a2b5;
-            }
-            
-            .enter-btn {
-                background: linear-gradient(135deg, #8a4b76, #7a3d66);
-                color: white;
-                border-color: rgba(255, 255, 255, 0.2);
+
+        /* 确保在所有情况下都完美居中 */
+        @media (max-height: 600px) {
+            .welcome-page {
+                align-items: flex-start;
+                padding-top: 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- 背景装饰元素 -->
+    <div class="floating-bg" style="width: 120px; height: 120px; top: 15%; left: 10%; animation-delay: 0s;"></div>
+    <div class="floating-bg" style="width: 80px; height: 80px; top: 25%; right: 12%; animation-delay: -3s;"></div>
+    <div class="floating-bg" style="width: 100px; height: 100px; bottom: 20%; left: 15%; animation-delay: -6s;"></div>
+    <div class="floating-bg" style="width: 60px; height: 60px; bottom: 30%; right: 18%; animation-delay: -9s;"></div>
+
     <!-- 主要内容 -->
-    <div class="enter-container">
-        <div class="logo">
-            <div class="logo-inner">M</div>
-        </div>
-        <h1>欢迎来到Moli的博客</h1>
-        <p class="subtitle">记录生活点滴 · 分享技术心得 · 探索美好世界</p>
-        
-        <div class="enter-section">
-            <div class="key-reminder">点击下方按钮进入博客</div>
-            <a href="/" class="enter-btn">进入博客 <span class="arrow">→</span></a>
+    <div class="welcome-page">
+        <div class="content-wrapper">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <div class="logo-text">M</div>
+                </div>
+            </div>
+
+            <div class="title-section">
+                <h1 class="main-title">欢迎来到Moli的博客</h1>
+                <div class="title-divider"></div>
+            </div>
+
+            <p class="description">
+                记录生活点滴 · 分享技术心得 · 探索美好世界
+            </p>
+
+            <div class="action-section">
+                <div class="action-hint">
+                    <i class="fas fa-mouse-pointer"></i>
+                    点击下方按钮进入博客
+                </div>
+                <a href="/" class="enter-button">
+                    开始探索
+                    <i class="fas fa-arrow-right button-arrow"></i>
+                </a>
+            </div>
         </div>
     </div>
 
     <script>
-        // 添加简约装饰元素
+        // 添加更多背景装饰
         document.addEventListener('DOMContentLoaded', function() {
             const body = document.querySelector('body');
             
-            // 添加装饰元素（数量减少，避免影响性能）
-            for (let i = 0; i < 4; i++) {
-                const decoration = document.createElement('div');
-                decoration.className = Math.random() > 0.5 ? 'decoration' : 'decoration dot';
+            // 添加2个额外的装饰元素
+            for (let i = 0; i < 2; i++) {
+                const bg = document.createElement('div');
+                bg.className = 'floating-bg';
                 
-                if (decoration.className === 'decoration') {
-                    decoration.style.width = Math.random() * 40 + 20 + 'px';
-                    decoration.style.height = decoration.style.width;
-                } else {
-                    decoration.style.width = Math.random() * 6 + 3 + 'px';
-                    decoration.style.height = decoration.style.width;
-                }
+                const size = Math.random() * 60 + 40;
+                bg.style.width = size + 'px';
+                bg.style.height = size + 'px';
+                bg.style.left = Math.random() * 100 + '%';
+                bg.style.top = Math.random() * 100 + '%';
+                bg.style.animationDelay = (Math.random() * 12 - 12) + 's';
+                bg.style.animationDuration = (Math.random() * 10 + 15) + 's';
                 
-                decoration.style.left = Math.random() * 100 + '%';
-                decoration.style.top = Math.random() * 100 + '%';
-                decoration.style.animationDuration = Math.random() * 15 + 10 + 's';
-                decoration.style.animationDelay = Math.random() * 5 + 's';
-                decoration.style.animationName = 'float';
-                
-                body.appendChild(decoration);
+                body.appendChild(bg);
             }
+
+            // 确保内容在加载后立即显示
+            const content = document.querySelector('.content-wrapper');
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                content.style.transition = 'all 0.6s ease-out';
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            }, 100);
         });
     </script>
 <!-- hexo injector body_end start --><script src="/js/music_player.js"></script><!-- hexo injector body_end end --></body>
